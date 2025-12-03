@@ -37,10 +37,11 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('solar-system-canvas') });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-// --- WIDER CAMERA POSITION FOR VISIBILITY ---
-// Setting camera very high (Y=800) and far back (Z=500)
-camera.position.set(0, 800, 500); 
-camera.lookAt(0, 0, 0);
+// --- EXTREME WIDE-ANGLE FIX ---
+// Setting camera very high and far back to see all orbits
+camera.position.set(0, 1000, 1000); 
+camera.lookAt(0, 0, 0); // Point the camera directly at the center of the star
+// --- END FIX ---
 
 // Orbit Controls (allows click/drag rotation and scrolling to zoom)
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -159,3 +160,4 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
 });
+
