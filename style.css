@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from showing up */
+    background-color: #000000;
+}
+
+#solar-system-canvas {
+    display: block;
+}
+
+#stats-display-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+    color: #ffffff;
+    padding: 20px;
+    border: 2px solid #00ffff; /* A cool cyan border */
+    border-radius: 10px;
+    max-width: 350px;
+    font-family: sans-serif;
+    z-index: 10;
+}
+
+#stats-display-area.hidden {
+    display: none;
+}
+
+#stats-display-area h2 {
+    color: #ffcc00; /* Gold heading */
+    margin-top: 0;
+}
+
+#stats-display-area li {
+    margin-bottom: 5px;
+}
