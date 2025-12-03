@@ -37,10 +37,10 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('solar-system-canvas') });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-// --- FIXED CAMERA POSITION ---
-// Setting camera high (Y=500) and back (Z=200) to ensure large orbits are visible
-camera.position.set(0, 500, 200); 
-camera.lookAt(0, 0, 0); 
+// --- WIDER CAMERA POSITION FOR VISIBILITY ---
+// Setting camera very high (Y=800) and far back (Z=500)
+camera.position.set(0, 800, 500); 
+camera.lookAt(0, 0, 0);
 
 // Orbit Controls (allows click/drag rotation and scrolling to zoom)
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -157,4 +157,5 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+
 });
